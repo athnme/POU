@@ -6,7 +6,7 @@ import { HeaderFive, HeaderFour, HeaderSix } from "../styles/Typography";
 import { LikeIcon, LocationIcon, OptionsIcon } from "../Icons";
 
 const PointWrapper = styled.View`
-  padding: 0 16px;
+  padding: 12px 16px;
 `;
 
 const ProfileContainer = styled.View`
@@ -101,7 +101,7 @@ export default function Post(props) {
     <PointWrapper>
       <ProfileContainer>
         <TouchableOpacity>
-          <ProfileImgL source={props.userImg} />
+          <ProfileImgL source={{ uri: `${props.userImg}` }} />
         </TouchableOpacity>
         <NameOptContainer>
           <TouchableOpacity>
@@ -121,15 +121,15 @@ export default function Post(props) {
             </HeaderSix>
           </LocationInfo>
         </LocationContainer>
-        <PointCard>
-          <PointImg source={props.postImgSrc} />
+        <PointCard onPress={props.postScreen}>
+          <PointImg source={{ uri: `${props.postImgSrc}` }} />
           <Caption>{props.caption}</Caption>
           <LikeContainer>
             <Likers>
               <LikerImgContainer>
-                <ProfileImgS source={props.userImg} />
-                <ProfileImgS source={props.userImg} />
-                <ProfileImgS source={props.userImg} />
+                <ProfileImgS source={{ uri: `${props.userImg}` }} />
+                <ProfileImgS source={{ uri: `${props.userImg}` }} />
+                <ProfileImgS source={{ uri: `${props.userImg}` }} />
               </LikerImgContainer>
               <HeaderSix>
                 and <HeaderFive>{props.likerNumber} others</HeaderFive> liked

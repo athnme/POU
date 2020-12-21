@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, FlatList } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
 import Post from "../cards/Post";
 
 const getPosts = async () => {
-  let uri = `http://localhost:5000/posts?_expand=user`;
+  let uri = `https://pou-server.loca.lt/posts?_expand=user`;
 
   const response = await fetch(uri);
   const posts = await response.json();
@@ -28,12 +28,10 @@ export default function FeedScreen({ navigation }) {
   return (
     <LinearGradient colors={["#07211F", "#030D12"]} style={styles.container}>
       <FlatList
-        numColumns={60}
-        contentContainerStyle={styles.listContainer}
-        columnWrapperStyle={styles.columnStyle}
         data={posts}
         renderItem={({ item }) => (
           <Post
+            postScreen={() => navigation.navigate("Point", { id: item.id })}
             postPath={item.id}
             userName={item.user.userName}
             userImg={item.user.userImg}
@@ -56,7 +54,6 @@ export default function FeedScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
   },
   listContainer: {
     paddingVertical: 8,
