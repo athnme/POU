@@ -13,7 +13,7 @@ const Img = styled.Image`
 
 export default function PostSmall(props) {
   return (
-    <PointContainer>
+    <PointContainer onPress={props.postScreen}>
       <Img source={{ uri: `${props.postImgSrc}` }} />
     </PointContainer>
   );

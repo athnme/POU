@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, FlatList } from "react-native";
+import { StyleSheet, FlatList, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
 import PostSmall from "../cards/PostSmall";
+import ProfileInfoCard from "../cards/ProfileInfoCard";
 
 export default function ProfileScreen({ route, navigation }) {
   const getUser = async () => {
@@ -29,8 +30,9 @@ export default function ProfileScreen({ route, navigation }) {
     <LinearGradient colors={["#07211F", "#030D12"]} style={styles.container}>
       <FlatList
         numColumns={2}
-        /*  ListHeaderComponent={
+        ListHeaderComponent={
           <ProfileInfoCard
+            userName={user.userName}
             wholeName={user.wholeName}
             userImg={user.userImg}
             message={user.message}
@@ -38,11 +40,11 @@ export default function ProfileScreen({ route, navigation }) {
             followerCount={user.posts.length}
             followingCount={user.posts.length}
           />
-        } */
+        }
         data={user.posts}
         renderItem={({ item }) => (
           <PostSmall
-            postScreen={() => navigation.navigate("Post", { id: item.id })}
+            postScreen={() => navigation.push("Point", { id: item.id })}
             postImgSrc={item.postImg}
           />
         )}
@@ -54,6 +56,6 @@ export default function ProfileScreen({ route, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 12,
+    paddingHorizontal: 12,
   },
 });
