@@ -32,6 +32,9 @@ export default function FeedScreen({ navigation }) {
         renderItem={({ item }) => (
           <Post
             postScreen={() => navigation.navigate("Point", { id: item.id })}
+            profileScreen={() =>
+              navigation.navigate("Profile", { id: item.user.id })
+            }
             postPath={item.id}
             userName={item.user.userName}
             userImg={item.user.userImg}
