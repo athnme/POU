@@ -100,7 +100,7 @@ export default function Post(props) {
   return (
     <PointWrapper>
       <ProfileContainer>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={props.profileScreen}>
           <ProfileImgL source={{ uri: `${props.userImg}` }} />
         </TouchableOpacity>
         <NameOptContainer>
