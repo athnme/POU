@@ -137,11 +137,17 @@ export default function PostScreen({ route, navigation }) {
       <ScrollView>
         <PostImg source={{ uri: `${post.postImg}` }} />
         <ProfileContainer>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Profile", { id: post.user.id })}
+          >
             <ProfileImgL source={{ uri: `${post.user.userImg}` }} />
           </TouchableOpacity>
           <ProfileLocation>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate("Profile", { id: post.user.id })
+              }
+            >
               <HeaderFive>{post.user.userName}</HeaderFive>
             </TouchableOpacity>
             <LocationContainer>

@@ -104,7 +104,7 @@ export default function Post(props) {
           <ProfileImgL source={{ uri: `${props.userImg}` }} />
         </TouchableOpacity>
         <NameOptContainer>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={props.profileScreen}>
             <HeaderSix>{props.userName}</HeaderSix>
           </TouchableOpacity>
           <TouchableOpacity>

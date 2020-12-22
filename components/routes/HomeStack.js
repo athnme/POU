@@ -32,7 +32,7 @@ export default function HomeStack({ navigation }) {
         />
         <Stack.Screen
           name="Profile"
-          options={{ title: "Insert Profile name" }}
+          options={{ title: "Profile" }}
           component={ProfileScreen}
         />
       </Stack.Navigator>
