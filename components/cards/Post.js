@@ -105,7 +105,7 @@ export default function Post(props) {
         </TouchableOpacity>
         <NameOptContainer>
           <TouchableOpacity onPress={props.profileScreen}>
-            <HeaderSix>{props.userName}</HeaderSix>
+            <HeaderFive>{props.userName}</HeaderFive>
           </TouchableOpacity>
           <TouchableOpacity>
             <OptionsIcon />
@@ -117,7 +117,8 @@ export default function Post(props) {
           <LocationIcon />
           <LocationInfo>
             <HeaderSix>
-              {props.location} | <HeaderFive>{props.locationName}</HeaderFive>
+              {props.location}
+              <HeaderFive>{props.locationName}</HeaderFive>
             </HeaderSix>
           </LocationInfo>
         </LocationContainer>
