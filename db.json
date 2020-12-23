@@ -53,7 +53,9 @@
       "coordinates": "50.93892363027569, 6.940656269549393",
       "postImg": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFyfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       "caption": "Found this fancy bar in cologne. These guys make the best MaiTais ever 😍",
-      "location": "Seiberts"
+      "location": "Seiberts",
+      "longitude": 6.940634811951477,
+      "latitude": 50.93899123782008
     },
     {
       "id": 2,
