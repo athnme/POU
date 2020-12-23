@@ -192,7 +192,9 @@ export default function PostScreen({ route, navigation }) {
           <HeaderSix>51105 Köln</HeaderSix>
         </View>
 
-        <BtnCta>
+        <BtnCta
+          onPress={() => navigation.navigate("Route", { id: post.user.id })}
+        >
           <BtnTextCta>lead to point</BtnTextCta>
         </BtnCta>
       </RouteContainer>
