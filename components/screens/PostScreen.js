@@ -10,7 +10,8 @@ import {
   HeaderFour,
   BtnTextCta,
 } from "../styles/Typography";
-import { LikeIcon, LocationIcon, UserIcon } from "../Icons";
+import { LikeIcon, LocationIcon, LogoIcon, UserIcon } from "../Icons";
+import pouMarker from "../styles/pouMarker";
 
 const PostImg = styled.Image`
   height: 320px;
@@ -187,12 +188,10 @@ export default function PostScreen({ route, navigation }) {
         <MapContainer>
           <Map>
             <MapView
-              style={styles.map}
-              scrollEnabled={false}
-              zoomEnabled={false}
               zoomTapEnabled={false}
-              loadingEnabled={true}
-              liteMode={true}
+              zoomEnabled={false}
+              scrollEnabled={false}
+              style={{ flex: 1 }}
               provider={PROVIDER_GOOGLE}
               customMapStyle={[
                 {
@@ -404,16 +403,17 @@ export default function PostScreen({ route, navigation }) {
                 latitudeDelta: 0.005,
                 longitudeDelta: 0.005,
               }}
-            />
-            <Marker
-              coordinate={{
-                latitude: post.latitude,
-                longitude: post.longitude,
-              }}
-              title={"hello"}
-              description={"kdkdkdk"}
-              image={require("../../assets/icon.png")}
-            />
+            >
+              <Marker
+                title={post.location}
+                coordinate={{
+                  latitude: post.latitude,
+                  longitude: post.longitude,
+                }}
+              >
+                <LogoIcon />
+              </Marker>
+            </MapView>
           </Map>
         </MapContainer>
       </ScrollView>
@@ -423,9 +423,7 @@ export default function PostScreen({ route, navigation }) {
           <HeaderSix>51105 Köln</HeaderSix>
         </View>
 
-        <BtnCta
-          onPress={() => navigation.navigate("Route", { id: post.user.id })}
-        >
+        <BtnCta onPress={() => navigation.navigate("Route", { id: post.id })}>
           <BtnTextCta>lead to point</BtnTextCta>
         </BtnCta>
       </RouteContainer>

@@ -2,14 +2,38 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet } from "react-native";
 import styled from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
-import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
+import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
+import { LogoIcon } from "../Icons";
 
 const MapContainer = styled.View`
   flex: 1;
   background-color: black;
 `;
 
-export default function RouteScreen() {
+export default function RouteScreen({ route, navigation }) {
+  const getPost = async () => {
+    const { id } = route.params;
+
+    let uri = `https://pou-server.loca.lt/posts/${id}?_expand=user`;
+
+    const response = await fetch(uri);
+    const post = await response.json();
+    return post;
+  };
+
+  const [post, setPost] = useState(null);
+  useEffect(() => {
+    getPost().then((post) => setPost(post));
+  }, []);
+  if (!post) {
+    return (
+      <LinearGradient
+        colors={["#07211F", "#030D12"]}
+        style={styles.container}
+      />
+    );
+  }
+
   return (
     <LinearGradient colors={["#07211F", "#030D12"]} style={styles.container}>
       <MapContainer>
@@ -220,13 +244,23 @@ export default function RouteScreen() {
             },
           ]}
           showsUserLocation
-          initialRegion={{
-            latitude: 37.78825,
-            longitude: -122.4324,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
+          region={{
+            latitude: post.latitude,
+            longitude: post.longitude,
+            latitudeDelta: 0.005,
+            longitudeDelta: 0.005,
           }}
-        />
+        >
+          <Marker
+            title={post.location}
+            coordinate={{
+              latitude: post.latitude,
+              longitude: post.longitude,
+            }}
+          >
+            <LogoIcon />
+          </Marker>
+        </MapView>
       </MapContainer>
     </LinearGradient>
   );
