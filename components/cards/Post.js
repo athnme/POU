@@ -26,7 +26,7 @@ const ProfileImgL = styled.Image`
 const NameOptContainer = styled.View`
   height: 32px;
   flex: 1;
-  padding-left: 8px;
+  padding-left: 16px;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;

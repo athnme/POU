@@ -26,7 +26,8 @@
         "googleMaps": {
           "apiKey": "AIzaSyDiPy_OD_Ok8m7RTHG5JAa43MDxp2fPMis"
         }
-      }
+      },
+      "permissions": ["CAMERA", "ACCES_FINE_LOCATION", "ACCESS_COARSE_LOCATION"]
     },
 
     "web": {
