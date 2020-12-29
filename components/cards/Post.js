@@ -138,7 +138,7 @@ export default function Post(props) {
               </HeaderSix>
             </Likers>
             <TouchableOpacity>
-              <LikeIcon />
+              <LikeIcon color="#cecece" />
             </TouchableOpacity>
           </LikeContainer>
         </PointCard>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from "react";
 import * as Location from "expo-location";
 
-function UserLocation() {
+function useUserLocation() {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
 
@@ -18,17 +18,7 @@ function UserLocation() {
     })();
   }, []);
 
-  let userCoords = "Waiting..";
-  if (errorMsg) {
-    userCoords = errorMsg;
-  } else if (location) {
-    userCoords = location.coords;
-  }
-
-  return userCoords;
+  return { location, errorMsg };
 }
 
-const userLong = UserLocation.longitude;
-const userLat = UserLocation.latitude;
-
-export { userLong, userLat };
+export default useUserLocation;

@@ -26,7 +26,7 @@ const TopBar = styled.View`
 
 const Stack = createStackNavigator();
 
-export default function HomeStack() {
+export default function LikeStack() {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -56,7 +56,7 @@ export default function HomeStack() {
         </LinearGradient>
       </Modal>
       <Stack.Navigator
-        initialRouteName="Home"
+        initialRouteName="Liked Points"
         screenOptions={{
           headerStyle: {
             backgroundColor: "#07211F",
@@ -65,9 +65,9 @@ export default function HomeStack() {
         }}
       >
         <Stack.Screen
-          name="Home"
+          name="Liked Points"
           options={{
-            headerTitle: LogoType,
+            headerTitle: "Liked Points",
             headerRight: () => (
               <Btn
                 onPress={() => {

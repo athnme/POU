@@ -63,7 +63,9 @@
       "coordinates": "50.93892363027569, 6.940656269549393",
       "postImg": "https://images.unsplash.com/photo-1525268323446-0505b6fe7778?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8YmFyfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       "caption": "I'm getting wasted at this awesome bar right now.",
-      "location": "Monkey Bar"
+      "location": "Monkey Bar",
+      "longitude": 6.943162955130985,
+      "latitude": 50.942094020751284
     },
     {
       "id": 3,
@@ -71,7 +73,9 @@
       "coordinates": "50.93892363027569, 6.940656269549393",
       "postImg": "https://images.unsplash.com/photo-1437418747212-8d9709afab22?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjh8fGJhcnxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60",
       "caption": "Since everyone is posting bar points, I might as well do too 😁",
-      "location": "Some Random Bar"
+      "location": "Some Random Bar",
+      "longitude": 6.940634811951477,
+      "latitude": 50.93899123782008
     },
     {
       "id": 4,
@@ -79,7 +83,9 @@
       "coordinates": "50.93892363027569, 6.940656269549393",
       "postImg": "https://images.unsplash.com/photo-1503876466-1fc5143eda57?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fGJhcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       "caption": "Oh, I'm definetly going to take this thing home. 😝",
-      "location": "One Night Club"
+      "location": "One Night Club",
+      "longitude": 6.956846455130608,
+      "latitude": 50.93417297021713
     },
     {
       "id": 5,
@@ -87,7 +93,9 @@
       "coordinates": "50.93892363027569, 6.940656269549393",
       "postImg": "https://images.unsplash.com/photo-1516352254823-8fce5b3d7ec2?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTB8fGJhcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       "caption": "OOOOHHH Fancy 😍😍😍",
-      "location": "Soul Bar"
+      "location": "Soul Bar",
+      "longitude": 6.940634811951477,
+      "latitude": 50.93899123782008
     },
     {
       "id": 6,
@@ -95,7 +103,9 @@
       "coordinates": "50.93892363027569, 6.940656269549393",
       "postImg": "https://images.unsplash.com/photo-1508424757105-b6d5ad9329d0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjh8fHJlc3RhdXJhbnR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       "caption": "Holy crap, u guys have to check this place out!!! 🤩🤩🤩🤩🤩🤩🤩",
-      "location": "Momotaro"
+      "location": "Momotaro",
+      "longitude": 6.940634811951477,
+      "latitude": 50.93899123782008
     },
     {
       "id": 7,
@@ -103,7 +113,9 @@
       "coordinates": "50.93892363027569, 6.940656269549393",
       "postImg": "https://images.unsplash.com/photo-1552566626-52f8b828add9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8cmVzdGF1cmFudHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       "caption": "Post 7",
-      "location": "Royal Iberico"
+      "location": "Royal Iberico",
+      "longitude": 6.940634811951477,
+      "latitude": 50.93899123782008
     },
     {
       "id": 8,
@@ -111,7 +123,9 @@
       "coordinates": "50.93892363027569, 6.940656269549393",
       "postImg": "https://images.unsplash.com/photo-1579027989536-b7b1f875659b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjV8fHJlc3RhdXJhbnR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       "caption": "Post 8",
-      "location": "Die Kunstbar"
+      "location": "Die Kunstbar",
+      "longitude": 6.940634811951477,
+      "latitude": 50.93899123782008
     },
     {
       "id": 9,
@@ -119,7 +133,9 @@
       "coordinates": "50.93892363027569, 6.940656269549393",
       "postImg": "https://images.unsplash.com/photo-1555992336-03a23c7b20ee?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzd8fHJlc3RhdXJhbnR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       "caption": "Post 9",
-      "location": "Low Budget"
+      "location": "Low Budget",
+      "longitude": 6.940634811951477,
+      "latitude": 50.93899123782008
     },
     {
       "id": 10,
@@ -127,7 +143,9 @@
       "coordinates": "50.93892363027569, 6.940656269549393",
       "postImg": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80",
       "caption": "Post 10",
-      "location": "Pure White"
+      "location": "Pure White",
+      "longitude": 6.940634811951477,
+      "latitude": 50.93899123782008
     },
     {
       "id": 11,
@@ -135,7 +153,9 @@
       "coordinates": "50.93892363027569, 6.940656269549393",
       "postImg": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80",
       "caption": "Post 11",
-      "location": "Pure White"
+      "location": "Pure White",
+      "longitude": 6.940634811951477,
+      "latitude": 50.93899123782008
     }
   ],
 

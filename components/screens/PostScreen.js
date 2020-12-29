@@ -83,7 +83,7 @@ const Btn = styled.TouchableOpacity`
 `;
 
 const MapContainer = styled.View`
-  padding: 16px 16px 80px;
+  padding: 16px 16px;
 `;
 
 const Map = styled.View`
@@ -95,7 +95,7 @@ const Map = styled.View`
 
 const RouteContainer = styled.View`
   width: 100%;
-  padding: 16px 32px;
+  padding: 16px 32px 32px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -109,7 +109,6 @@ const BtnCta = styled.TouchableOpacity`
   align-items: center;
   padding: 16px 32px;
   border-radius: 40px;
-  margin-left: 48px;
 `;
 
 export default function PostScreen({ route, navigation }) {
@@ -181,7 +180,7 @@ export default function PostScreen({ route, navigation }) {
               <UserIcon />
             </Btn>
             <Btn>
-              <LikeIcon />
+              <LikeIcon color="#cecece" />
             </Btn>
           </ButtonContainer>
         </LikeContainer>
@@ -218,8 +217,8 @@ export default function PostScreen({ route, navigation }) {
       </ScrollView>
       <RouteContainer>
         <View>
-          <HeaderSix>Camberger Str 18</HeaderSix>
-          <HeaderSix>51105 Köln</HeaderSix>
+          {/* <HeaderSix></HeaderSix>
+          <HeaderSix></HeaderSix> */}
         </View>
         <BtnCta onPress={() => navigation.navigate("Route", { id: post.id })}>
           <BtnTextCta>lead to point</BtnTextCta>

@@ -7,7 +7,7 @@ import MapViewDirections from "react-native-maps-directions";
 
 import { LogoIcon } from "../Icons";
 import MapStyle from "../styles/MapStyle";
-import { userLong, userLat } from "../UserLocation";
+import useUserLocation from "../UserLocation";
 
 const MapContainer = styled.View`
   flex: 1;
@@ -15,6 +15,8 @@ const MapContainer = styled.View`
 `;
 
 export default function RouteScreen({ route }) {
+  const { location, errorMsg } = useUserLocation();
+
   const getPost = async () => {
     const { id } = route.params;
 
@@ -63,16 +65,17 @@ export default function RouteScreen({ route }) {
           </Marker>
           <Marker
             coordinate={{
-              latitude: userLat,
-              longitude: userLong,
+              latitude: location.coords.latitude,
+              longitude: location.coords.longitude,
             }}
           >
             <LogoIcon />
           </Marker>
           <MapViewDirections
+            precision="high"
             origin={{
-              latitude: userLat,
-              longitude: userLong,
+              latitude: location.coords.latitude,
+              longitude: location.coords.longitude,
             }}
             destination={{
               latitude: post.latitude,
