@@ -47,7 +47,6 @@ export default function RouteScreen({ route }) {
           style={{ flex: 1 }}
           provider={PROVIDER_GOOGLE}
           customMapStyle={MapStyle}
-          showsUserLocation
           region={{
             latitude: post.latitude,
             longitude: post.longitude,

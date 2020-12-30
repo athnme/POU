@@ -2,8 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { StyleSheet, ImageBackground } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 
 import { BtnTextCta, BtnTextDefault } from "../styles/Typography";
+import { YourImgS } from "../YourImg";
+import MapStyle from "../styles/MapStyle";
+import useUserLocation from "../UserLocation";
 
 const TopBar = styled.View`
   flex-direction: row;
@@ -92,6 +96,7 @@ const Map = styled.View`
   height: 280px;
   margin: 16px 0;
   border-radius: 16px;
+  overflow: hidden;
 `;
 
 const BtnContainer = styled.View`
@@ -105,6 +110,7 @@ const ImgBg = styled.ImageBackground`
 `;
 
 export default function AddScreen() {
+  const { location, errorMsg } = useUserLocation();
   return (
     <LinearGradient colors={["#07211F", "#030D12"]} style={styles.container}>
       <PointCreator>
@@ -146,7 +152,28 @@ export default function AddScreen() {
           placeholder="mark for someone (optional)"
           placeholderTextColor={"rgba(206, 206, 206, .4)"}
         />
-        <Map></Map>
+        <Map>
+          <MapView
+            style={{ flex: 1 }}
+            provider={PROVIDER_GOOGLE}
+            customMapStyle={MapStyle}
+            region={{
+              latitude: location.coords.latitude,
+              longitude: location.coords.longitude,
+              latitudeDelta: 0.005,
+              longitudeDelta: 0.005,
+            }}
+          >
+            <Marker
+              coordinate={{
+                latitude: location.coords.latitude,
+                longitude: location.coords.longitude,
+              }}
+            >
+              <YourImgS color="#cecece" />
+            </Marker>
+          </MapView>
+        </Map>
         <BtnContainer>
           <BtnDefault style={{ flex: 1, marginRight: 8 }}>
             <BtnTextDefault>clear</BtnTextDefault>
