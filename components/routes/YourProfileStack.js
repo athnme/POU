@@ -57,6 +57,7 @@ export default function YourProfileStack() {
       <Stack.Navigator
         initialRouteName="You"
         screenOptions={{
+          animationEnabled: false,
           headerStyle: {
             backgroundColor: "#07211F",
           },

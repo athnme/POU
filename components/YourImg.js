@@ -26,11 +26,21 @@ const Img = styled.Image`
   height: 100%;
 `;
 
+export function UserImgL({ userImg }) {
+  return (
+    <ProfileImgL style={{ borderColor: "#cecece" }}>
+      <ImgBg source={require("../assets/profileplaceholder.jpg")}>
+        <Img source={{ uri: `${userImg}` }} />
+      </ImgBg>
+    </ProfileImgL>
+  );
+}
+
 export function YourImgS({ color }) {
   return (
     <ProfileImgs style={{ borderColor: color }}>
-      <ImgBg>
-        <Img source={require("../assets/profileplaceholder.jpg")} />
+      <ImgBg source={require("../assets/profileplaceholder.jpg")}>
+        <Img />
       </ImgBg>
     </ProfileImgs>
   );
@@ -39,8 +49,8 @@ export function YourImgS({ color }) {
 export function YourImgL({ color }) {
   return (
     <ProfileImgL style={{ borderColor: color }}>
-      <ImgBg>
-        <Img source={require("../assets/profileplaceholder.jpg")} />
+      <ImgBg source={require("../assets/profileplaceholder.jpg")}>
+        <Img />
       </ImgBg>
     </ProfileImgL>
   );

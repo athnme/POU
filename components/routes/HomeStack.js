@@ -58,6 +58,7 @@ export default function HomeStack() {
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
+          animationEnabled: false,
           headerStyle: {
             backgroundColor: "#07211F",
           },

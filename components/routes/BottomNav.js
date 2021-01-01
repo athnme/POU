@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeStack from "./HomeStack";
 import LikeStack from "./LikeStack";
 import YourProfileStack from "./YourProfileStack";
+import SearchStack from "./SearchStack";
 import { HomeIcon, LikeIcon, NotificationIcon, SearchIcon } from "../Icons";
 
 import { YourImgS } from "../YourImg";
@@ -38,7 +39,7 @@ export default function BottomNav() {
             tabBarIcon: ({ color }) => <SearchIcon color={color} />,
           }}
           name="Search"
-          component={HomeStack}
+          component={SearchStack}
         />
         <Tab.Screen
           options={{

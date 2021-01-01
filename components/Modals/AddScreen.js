@@ -9,14 +9,6 @@ import { YourImgS } from "../YourImg";
 import MapStyle from "../styles/MapStyle";
 import useUserLocation from "../UserLocation";
 
-const TopBar = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 16px;
-  height: 56px;
-`;
-
 const PointCreator = styled.ScrollView`
   padding: 0 16px 16px;
 `;
