@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ScrollView, StyleSheet, TouchableOpacity, View } from "react-native";
 import styled from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
+import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 
 import {
   HeaderSix,
@@ -9,7 +10,8 @@ import {
   HeaderFour,
   BtnTextCta,
 } from "../styles/Typography";
-import { LikeIcon, LocationIcon, UserIcon } from "../Icons";
+import { LikeIcon, LocationIcon, LogoIcon, UserIcon } from "../Icons";
+import Mapstyle from "../styles/MapStyle";
 
 const PostImg = styled.Image`
   height: 320px;
@@ -81,18 +83,19 @@ const Btn = styled.TouchableOpacity`
 `;
 
 const MapContainer = styled.View`
-  padding: 16px 16px 80px;
+  padding: 16px 16px;
 `;
 
 const Map = styled.View`
   background-color: black;
   height: 360px;
   border-radius: 16px;
+  overflow: hidden;
 `;
 
 const RouteContainer = styled.View`
   width: 100%;
-  padding: 16px 32px;
+  padding: 16px 32px 32px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -106,7 +109,6 @@ const BtnCta = styled.TouchableOpacity`
   align-items: center;
   padding: 16px 32px;
   border-radius: 40px;
-  margin-left: 48px;
 `;
 
 export default function PostScreen({ route, navigation }) {
@@ -178,23 +180,47 @@ export default function PostScreen({ route, navigation }) {
               <UserIcon />
             </Btn>
             <Btn>
-              <LikeIcon />
+              <LikeIcon color="#cecece" />
             </Btn>
           </ButtonContainer>
         </LikeContainer>
         <MapContainer>
-          <Map></Map>
+          <Map>
+            <MapView
+              zoomTapEnabled={false}
+              liteMode={true}
+              zoomEnabled={false}
+              scrollEnabled={false}
+              style={{ flex: 1 }}
+              provider={PROVIDER_GOOGLE}
+              customMapStyle={Mapstyle}
+              showsUserLocation
+              region={{
+                latitude: post.latitude,
+                longitude: post.longitude,
+                latitudeDelta: 0.005,
+                longitudeDelta: 0.005,
+              }}
+            >
+              <Marker
+                title={post.location}
+                coordinate={{
+                  latitude: post.latitude,
+                  longitude: post.longitude,
+                }}
+              >
+                <LogoIcon />
+              </Marker>
+            </MapView>
+          </Map>
         </MapContainer>
       </ScrollView>
       <RouteContainer>
         <View>
-          <HeaderSix>Camberger Str 18</HeaderSix>
-          <HeaderSix>51105 Köln</HeaderSix>
+          {/* <HeaderSix></HeaderSix>
+          <HeaderSix></HeaderSix> */}
         </View>
-
-        <BtnCta
-          onPress={() => navigation.navigate("Route", { id: post.user.id })}
-        >
+        <BtnCta onPress={() => navigation.navigate("Route", { id: post.id })}>
           <BtnTextCta>lead to point</BtnTextCta>
         </BtnCta>
       </RouteContainer>
@@ -205,5 +231,9 @@ export default function PostScreen({ route, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  map: {
+    flex: 1,
+    borderRadius: 16,
   },
 });
