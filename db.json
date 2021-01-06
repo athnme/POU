@@ -186,41 +186,98 @@
       "img": "https://images.unsplash.com/photo-1606128474171-e8b7ab67ea41?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzZ8fGNvbG9nbmV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
     }
   ],
-  "likes": [
+
+  "follows": [
     {
       "id": 1,
       "userId": 1,
-      "postId": 2
+      "account": [
+        {
+          "id": 1,
+          "userId": 2
+        },
+        {
+          "userId": 3
+        },
+        {
+          "userId": 4
+        },
+        {
+          "userId": 5
+        }
+      ]
     },
     {
       "id": 2,
-      "userId": 1,
-      "postId": 4
+      "userId": 2,
+      "accounts": [
+        {
+          "userId": 2
+        },
+        {
+          "userId": 3
+        },
+        {
+          "userId": 4
+        },
+        {
+          "userId": 5
+        }
+      ]
     },
     {
       "id": 3,
       "userId": 3,
-      "postId": 6
+      "accounts": [
+        {
+          "userId": 2
+        },
+        {
+          "userId": 3
+        },
+        {
+          "userId": 4
+        },
+        {
+          "userId": 5
+        }
+      ]
     },
     {
       "id": 4,
-      "userId": 1,
-      "postId": 7
+      "userId": 4,
+      "accounts": [
+        {
+          "userId": 2
+        },
+        {
+          "userId": 3
+        },
+        {
+          "userId": 4
+        },
+        {
+          "userId": 5
+        }
+      ]
     },
     {
       "id": 5,
-      "userId": 1,
-      "postId": 8
-    },
-    {
-      "id": 6,
-      "userId": 2,
-      "postId": 1
-    },
-    {
-      "id": 7,
-      "userId": 2,
-      "postId": 8
+      "userId": 5,
+      "accounts": [
+        {
+          "userId": 2
+        },
+        {
+          "userId": 3
+        },
+        {
+          "userId": 4
+        },
+        {
+          "userId": 5
+        }
+      ]
     }
   ]
 }

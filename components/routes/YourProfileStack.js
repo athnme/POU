@@ -4,9 +4,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import styled from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
 
-import FeedScreen from "../screens/FeedScreen";
-import PostScreen from "../screens/PostScreen";
-import ProfileScreen from "../screens/ProfileScreen";
+import YourPostScreen from "../screens/YourPostScreen";
+import YourProfileScreen from "../screens/YourProfileScreen";
 import RouteScreen from "../screens/RouteScreen";
 import AddScreen from "../Modals/AddScreen";
 import { AddIcon, LogoType, CloseIcon } from "../Icons";
@@ -26,7 +25,7 @@ const TopBar = styled.View`
 
 const Stack = createStackNavigator();
 
-export default function HomeStack() {
+export default function YourProfileStack() {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -56,7 +55,7 @@ export default function HomeStack() {
         </LinearGradient>
       </Modal>
       <Stack.Navigator
-        initialRouteName="Home"
+        initialRouteName="You"
         screenOptions={{
           animationEnabled: false,
           headerStyle: {
@@ -66,9 +65,9 @@ export default function HomeStack() {
         }}
       >
         <Stack.Screen
-          name="Home"
+          name="You"
           options={{
-            headerTitle: LogoType,
+            headerTitle: "You",
             headerRight: () => (
               <Btn
                 onPress={() => {
@@ -79,17 +78,12 @@ export default function HomeStack() {
               </Btn>
             ),
           }}
-          component={FeedScreen}
+          component={YourProfileScreen}
         />
         <Stack.Screen
           name="Point"
           options={{ title: "Point" }}
-          component={PostScreen}
-        />
-        <Stack.Screen
-          name="Profile"
-          options={{ title: "Profile" }}
-          component={ProfileScreen}
+          component={YourPostScreen}
         />
         <Stack.Screen
           name="Route"

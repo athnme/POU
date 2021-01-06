@@ -4,7 +4,12 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import HomeStack from "./HomeStack";
 import LikeStack from "./LikeStack";
+import YourProfileStack from "./YourProfileStack";
+import SearchStack from "./SearchStack";
+import NotificationsStack from "./NotificationsStack";
 import { HomeIcon, LikeIcon, NotificationIcon, SearchIcon } from "../Icons";
+
+import { YourImgS } from "../YourImg";
 
 const Tab = createBottomTabNavigator();
 
@@ -35,7 +40,7 @@ export default function BottomNav() {
             tabBarIcon: ({ color }) => <SearchIcon color={color} />,
           }}
           name="Search"
-          component={HomeStack}
+          component={SearchStack}
         />
         <Tab.Screen
           options={{
@@ -51,15 +56,15 @@ export default function BottomNav() {
             tabBarIcon: ({ color }) => <NotificationIcon color={color} />,
           }}
           name="Notifications"
-          component={HomeStack}
+          component={NotificationsStack}
         />
         <Tab.Screen
           options={{
             tabBarLabel: "You",
-            tabBarIcon: ({ color }) => <LikeIcon color={color} />,
+            tabBarIcon: ({ color }) => <YourImgS color={color} />,
           }}
           name="You"
-          component={HomeStack}
+          component={YourProfileStack}
         />
       </Tab.Navigator>
     </NavigationContainer>
