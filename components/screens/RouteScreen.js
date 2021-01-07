@@ -8,6 +8,7 @@ import MapViewDirections from "react-native-maps-directions";
 import { LogoIcon } from "../Icons";
 import MapStyle from "../styles/MapStyle";
 import useUserLocation from "../UserLocation";
+import { YourImgS } from "../YourImg";
 
 const MapContainer = styled.View`
   flex: 1;
@@ -68,7 +69,7 @@ export default function RouteScreen({ route }) {
               longitude: location.coords.longitude,
             }}
           >
-            <LogoIcon />
+            <YourImgS color="#cecece" />
           </Marker>
           <MapViewDirections
             precision="high"

@@ -150,16 +150,20 @@ export default function AddScreen() {
             provider={PROVIDER_GOOGLE}
             customMapStyle={MapStyle}
             region={{
-              latitude: location.coords.latitude,
-              longitude: location.coords.longitude,
+              latitude: 50.93705259149812,
+              longitude: 6.99791897679244,
+              /* latitude: location.coords.latitude,
+              longitude: location.coords.longitude, */
               latitudeDelta: 0.005,
               longitudeDelta: 0.005,
             }}
           >
             <Marker
               coordinate={{
-                latitude: location.coords.latitude,
-                longitude: location.coords.longitude,
+                latitude: 50.93705259149812,
+                longitude: 6.99791897679244,
+                /* latitude: location.coords.latitude,
+              longitude: location.coords.longitude, */
               }}
             >
               <YourImgS color="#cecece" />

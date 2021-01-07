@@ -9,6 +9,7 @@ import PostScreen from "../screens/PostScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import RouteScreen from "../screens/RouteScreen";
 import AddScreen from "../Modals/AddScreen";
+import PhoneCam from "../Hardware/PhoneCam";
 import { AddIcon, LogoType, CloseIcon } from "../Icons";
 import { HeaderOne } from "../styles/Typography";
 
@@ -52,7 +53,8 @@ export default function HomeStack() {
               <CloseIcon />
             </TouchableOpacity>
           </TopBar>
-          <AddScreen />
+          <PhoneCam />
+          {/* <AddScreen /> */}
         </LinearGradient>
       </Modal>
       <Stack.Navigator

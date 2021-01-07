@@ -5,16 +5,14 @@ import { LinearGradient } from "expo-linear-gradient";
 import { HeaderThree, HeaderTwo } from "../styles/Typography";
 
 const PointContainer = styled.TouchableOpacity`
-  margin: 4px;
-  flex-grow: 1;
-  height: 180px;
   border-radius: 16px;
   overflow: hidden;
+  flex: 1;
+  margin: 4px;
 `;
 
 const Img = styled.ImageBackground`
-  width: 100%;
-  height: 100%;
+  height: 180px;
   justify-content: flex-end;
 `;
 
@@ -24,7 +22,7 @@ export default function LocationCard({ locationImg, locationName }) {
       <Img source={{ uri: `${locationImg}` }}>
         <LinearGradient
           style={styles.textContainer}
-          colors={["rgba(0, 0, 0, .0)", "rgba(3, 13, 18, .75)"]}
+          colors={["rgba(0, 0, 0, .0)", "rgba(3, 13, 18, .750)"]}
         >
           <HeaderThree>{locationName}</HeaderThree>
         </LinearGradient>

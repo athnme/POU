@@ -6,6 +6,7 @@ import HomeStack from "./HomeStack";
 import LikeStack from "./LikeStack";
 import YourProfileStack from "./YourProfileStack";
 import SearchStack from "./SearchStack";
+import NotificationsStack from "./NotificationsStack";
 import { HomeIcon, LikeIcon, NotificationIcon, SearchIcon } from "../Icons";
 
 import { YourImgS } from "../YourImg";
@@ -55,7 +56,7 @@ export default function BottomNav() {
             tabBarIcon: ({ color }) => <NotificationIcon color={color} />,
           }}
           name="Notifications"
-          component={HomeStack}
+          component={NotificationsStack}
         />
         <Tab.Screen
           options={{

@@ -36,6 +36,16 @@ export function UserImgL({ userImg }) {
   );
 }
 
+export function UserImgS({ color }) {
+  return (
+    <ProfileImgs style={{ borderColor: color }}>
+      <ImgBg source={require("../assets/profileplaceholder.jpg")}>
+        <Img />
+      </ImgBg>
+    </ProfileImgs>
+  );
+}
+
 export function YourImgS({ color }) {
   return (
     <ProfileImgs style={{ borderColor: color }}>

@@ -23,12 +23,23 @@ export function BackIcon() {
   );
 }
 
-export function CloseIcon() {
+export function CheckIcon({ color }) {
+  return (
+    <Svg width={24} height={24} viewBox="0 0 24 24" fill="none">
+      <Path
+        d="M10.7 20c-.4 0-.8-.2-1-.5l-5.3-6.7c-.5-.6-.4-1.4.2-1.9.6-.5 1.4-.4 1.9.2l3.9 4.9c.1.1.3.1.4 0l6.8-11.3c.4-.6 1.2-.8 1.8-.5.6.4.8 1.2.4 1.8l-8 13.3c-.2.4-.6.7-1.1.7z"
+        fill={color}
+      />
+    </Svg>
+  );
+}
+
+export function CloseIcon({ color }) {
   return (
     <Svg width={24} height={24} viewBox="0 0 24 24" fill="none">
       <Path
         d="M14.217 12.317a.448.448 0 010-.634l5.387-5.387a1.345 1.345 0 10-1.902-1.902l-5.387 5.389a.448.448 0 01-.634 0L6.294 4.396a1.343 1.343 0 10-1.9 1.9l5.387 5.387a.448.448 0 010 .634l-5.387 5.387a1.345 1.345 0 101.902 1.902l5.387-5.387a.448.448 0 01.634 0l5.387 5.387a1.345 1.345 0 001.902-1.902l-5.389-5.387z"
-        fill="#CECECE"
+        fill={color}
       />
     </Svg>
   );
