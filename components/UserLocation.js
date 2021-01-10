@@ -25,4 +25,3 @@ function useUserLocation() {
 
 export default useUserLocation;
 
-/* getCurrentPositionAsync */
