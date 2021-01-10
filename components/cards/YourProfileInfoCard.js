@@ -83,11 +83,11 @@ export default function YourProfileInfoCard({
             <HeaderSix>points</HeaderSix>
           </Stats>
           <Stats>
-            <HeaderThree>{pointCount}</HeaderThree>
+            <HeaderThree>26</HeaderThree>
             <HeaderSix>followers</HeaderSix>
           </Stats>
           <Stats>
-            <HeaderThree>{pointCount}</HeaderThree>
+            <HeaderThree>12</HeaderThree>
             <HeaderSix>follows</HeaderSix>
           </Stats>
         </StatsContainer>

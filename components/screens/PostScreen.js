@@ -97,7 +97,7 @@ const RouteContainer = styled.View`
   width: 100%;
   padding: 16px 32px 32px;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   position: absolute;
   bottom: 0;
@@ -165,14 +165,14 @@ export default function PostScreen({ route, navigation }) {
         </CaptionContainer>
         <LikeContainer>
           <Likers>
-            <LikersImgs>
+            {/* <LikersImgs>
               <ProfileImgS source={{ uri: `${post.user.userImg}` }} />
               <ProfileImgS source={{ uri: `${post.user.userImg}` }} />
               <ProfileImgS source={{ uri: `${post.user.userImg}` }} />
-            </LikersImgs>
+            </LikersImgs> */}
             <HeaderSix>
-              <HeaderFive>{post.user.userName}</HeaderFive> and{" "}
-              <HeaderFive>12 others</HeaderFive> liked this
+              {/* <HeaderFive>{post.user.userName}</HeaderFive> and{" "} */}
+              <HeaderFive>{post.likers.length} people</HeaderFive> liked this
             </HeaderSix>
           </Likers>
           <ButtonContainer>
@@ -214,16 +214,16 @@ export default function PostScreen({ route, navigation }) {
             </MapView>
           </Map>
         </MapContainer>
+        <RouteContainer>
+          {/* <View>
+          <HeaderSix></HeaderSix>
+          <HeaderSix></HeaderSix>
+        </View> */}
+          <BtnCta onPress={() => navigation.navigate("Route", { id: post.id })}>
+            <BtnTextCta>lead to point</BtnTextCta>
+          </BtnCta>
+        </RouteContainer>
       </ScrollView>
-      <RouteContainer>
-        <View>
-          {/* <HeaderSix></HeaderSix>
-          <HeaderSix></HeaderSix> */}
-        </View>
-        <BtnCta onPress={() => navigation.navigate("Route", { id: post.id })}>
-          <BtnTextCta>lead to point</BtnTextCta>
-        </BtnCta>
-      </RouteContainer>
     </LinearGradient>
   );
 }

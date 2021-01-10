@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { StyleSheet, ImageBackground } from "react-native";
+import * as ImagePicker from "expo-image-picker";
+import * as Permissions from "expo-permissions";
+
+import { StyleSheet, ImageBackground, Platform } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 
 import { BtnTextCta, BtnTextDefault } from "../styles/Typography";
-import { YourImgS } from "../YourImg";
+import { YourImgS, YourImgL } from "../YourImg";
 import MapStyle from "../styles/MapStyle";
 import useUserLocation from "../UserLocation";
 
@@ -101,16 +104,65 @@ const ImgBg = styled.ImageBackground`
   height: 100%;
 `;
 
-export default function AddScreen() {
+export default function AddScreen({ modaling }) {
+  //Set User LOcation
   const { location, errorMsg } = useUserLocation();
+
+  const [caption, setCaption] = useState(null);
+  const [locationName, setLocationName] = useState(null);
+
+  const [image, setImage] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      if (Platform.OS !== "web") {
+        const { status } = await ImagePicker.requestCameraPermissionsAsync();
+        if (status !== "granted") {
+          alert("Sorry, we need camera roll permissions to make this work!");
+        }
+      }
+    })();
+  }, []);
+
+  const pickImage = async () => {
+    let result = await ImagePicker.launchCameraAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [1, 1],
+      quality: 0.5,
+    });
+
+    console.log(result);
+
+    if (!result.cancelled) {
+      setImage(result.uri);
+    }
+
+    return result.uri;
+  };
+
+  const handleUpload = (image) => {
+    const data = new FormData();
+    data.append("file", image);
+    data.append("upload_preset", "PointImage");
+    data.append("cloud_name", "athn");
+
+    fetch("https://api.cloudinary.com/v1_1/athn/image/upload", {
+      method: "post",
+      body: data,
+    })
+      .then((res) => res.json())
+      .then(data);
+  };
+
   return (
     <LinearGradient colors={["#07211F", "#030D12"]} style={styles.container}>
       <PointCreator>
         <ImgUploadContainer>
           <ImgBg source={require("../../assets/Picholder.jpg")}>
-            <ImgContainer />
+            <ImgContainer source={{ uri: image }} />
             <ImgMenu>
-              <BtnDefault>
+              <BtnDefault onPress={pickImage}>
                 <BtnTextDefault>add image</BtnTextDefault>
               </BtnDefault>
             </ImgMenu>
@@ -119,7 +171,12 @@ export default function AddScreen() {
         <PicCaption>
           <ProfileImgL>
             <ImgBg source={require("../../assets/profileplaceholder.jpg")}>
-              <ProfileImg />
+              <YourImgL
+                imgSrc={{
+                  uri:
+                    "https://images.unsplash.com/photo-1570158268183-d296b2892211?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzB8fHBvcnRyYWl0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                }}
+              />
             </ImgBg>
           </ProfileImgL>
           <Caption
@@ -129,6 +186,8 @@ export default function AddScreen() {
             disableFullscreenUI={false}
             placeholder="write a caption"
             placeholderTextColor={"rgba(206, 206, 206, .4)"}
+            value={caption}
+            onchangeText={(text) => setCaption(text)}
           />
         </PicCaption>
 
@@ -137,6 +196,8 @@ export default function AddScreen() {
           disableFullscreenUI={false}
           placeholder="add name of locationn"
           placeholderTextColor={"rgba(206, 206, 206, .4)"}
+          value={locationName}
+          onchangeText={(text) => setLocationName(text)}
         />
         <TxtInput
           maxLength={60}
@@ -166,7 +227,13 @@ export default function AddScreen() {
               longitude: location.coords.longitude, */
               }}
             >
-              <YourImgS color="#cecece" />
+              <YourImgS
+                color="#cecece"
+                imgSrc={{
+                  uri:
+                    "https://images.unsplash.com/photo-1570158268183-d296b2892211?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzB8fHBvcnRyYWl0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                }}
+              />
             </Marker>
           </MapView>
         </Map>
@@ -174,7 +241,7 @@ export default function AddScreen() {
           <BtnDefault style={{ flex: 1, marginRight: 8 }}>
             <BtnTextDefault>clear</BtnTextDefault>
           </BtnDefault>
-          <BtnCta style={{ flex: 1, marginLeft: 8 }}>
+          <BtnCta onPress={modaling} style={{ flex: 1, marginLeft: 8 }}>
             <BtnTextCta>post</BtnTextCta>
           </BtnCta>
         </BtnContainer>

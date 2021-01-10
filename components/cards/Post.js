@@ -46,7 +46,7 @@ const PointCard = styled.TouchableOpacity`
 
 const PointImg = styled.Image`
   width: 100%;
-  height: 300px;
+  height: 240px;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
 `;
@@ -92,8 +92,8 @@ const LocationInfo = styled.View`
   align-items: flex-end;
   justify-content: center;
   height: 32px;
-  left: -104;
-  top: 183;
+  left: -104px;
+  top: 183px;
 `;
 
 export default function Post(props) {
@@ -127,14 +127,14 @@ export default function Post(props) {
           <Caption>{props.caption}</Caption>
           <LikeContainer>
             <Likers>
-              <LikerImgContainer>
+              {/* <LikerImgContainer>
+                Gotta need to solve this issue by working on the db, no idea how to solve it right now
                 <ProfileImgS source={{ uri: `${props.userImg}` }} />
                 <ProfileImgS source={{ uri: `${props.userImg}` }} />
                 <ProfileImgS source={{ uri: `${props.userImg}` }} />
-              </LikerImgContainer>
+              </LikerImgContainer> */}
               <HeaderSix>
-                and <HeaderFive>{props.likerNumber} others</HeaderFive> liked
-                this
+                <HeaderFive>{props.likerNumber} people</HeaderFive> liked this
               </HeaderSix>
             </Likers>
             <TouchableOpacity>

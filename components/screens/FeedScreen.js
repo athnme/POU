@@ -45,8 +45,7 @@ export default function FeedScreen({ navigation }) {
             likerImg1={item.likerImg1}
             likerImg2={item.likerImg2}
             likerImg3={item.likerImg3}
-            firstLiker={item.firstLiker}
-            likerNumber={item.likerNumber}
+            likerNumber={item.likers.length}
           />
         )}
       />
