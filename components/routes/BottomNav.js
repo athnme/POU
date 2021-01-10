@@ -61,7 +61,16 @@ export default function BottomNav() {
         <Tab.Screen
           options={{
             tabBarLabel: "You",
-            tabBarIcon: ({ color }) => <YourImgS color={color} />,
+            tabBarIcon: ({ color }) => (
+              <YourImgS
+                color={color}
+                imgSrc={{
+                  uri:
+                    "https://images.unsplash.com/photo-1570158268183-d296b2892211?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzB8fHBvcnRyYWl0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+                }}
+              />
+            ),
+
           }}
           name="You"
           component={YourProfileStack}

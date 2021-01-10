@@ -51,7 +51,12 @@ export default function YourProfileStack() {
               <CloseIcon />
             </TouchableOpacity>
           </TopBar>
-          <AddScreen />
+          <AddScreen
+            modaling={() => {
+              setModalVisible(false);
+            }}
+          />
+
         </LinearGradient>
       </Modal>
       <Stack.Navigator

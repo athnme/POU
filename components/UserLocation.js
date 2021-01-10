@@ -13,7 +13,10 @@ function useUserLocation() {
         return;
       }
 
-      let location = await Location.getCurrentPositionAsync({});
+      let location = await Location.getCurrentPositionAsync({
+        enableHighAccuracy: true,
+      });
+
       setLocation(location);
     })();
   }, []);
@@ -22,3 +25,4 @@ function useUserLocation() {
 }
 
 export default useUserLocation;
+

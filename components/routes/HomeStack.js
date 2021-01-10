@@ -12,6 +12,9 @@ import AddScreen from "../Modals/AddScreen";
 import { AddIcon, LogoType, CloseIcon } from "../Icons";
 import { HeaderOne } from "../styles/Typography";
 
+import ImagePickerExample from "../Hardware/PhoneCam";
+
+
 const Btn = styled.TouchableOpacity`
   margin-right: 16px;
 `;
@@ -49,10 +52,16 @@ export default function HomeStack() {
                 setModalVisible(false);
               }}
             >
-              <CloseIcon />
+              <CloseIcon color="#cecece" />
             </TouchableOpacity>
           </TopBar>
-          <AddScreen />
+          {/* <ImagePickerExample /> */}
+          <AddScreen
+            modaling={() => {
+              setModalVisible(false);
+            }}
+          />
+
         </LinearGradient>
       </Modal>
       <Stack.Navigator

@@ -1,18 +1,14 @@
 import React from "react";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
-import FeedScreen from "../screens/FeedScreen";
-import SearchPointScreen from "../screens/SearchPointScreen";
-import SearchProfileScreen from "../screens/SearchProfileScreen";
-import SearchLocationScreen from "../screens/SearchLocationScreen";
+import FollowRequestScreen from "../screens/FollowRequestsScreen";
+import MarkedForYouScreen from "../screens/MarkedForYouScreen";
 
 const Tab = createMaterialTopTabNavigator();
 
 export default function SearchTopNav({ navigation }) {
   return (
     <Tab.Navigator
-      initialRouteName="Points"
-
       tabBarOptions={{
         activeTintColor: "#33D17C",
         inactiveTintColor: "#cecece",
@@ -23,9 +19,8 @@ export default function SearchTopNav({ navigation }) {
         },
       }}
     >
-      <Tab.Screen name="Points" component={SearchPointScreen} />
-      <Tab.Screen name="Profiles" component={SearchProfileScreen} />
-      <Tab.Screen name="Locations" component={SearchLocationScreen} />
+      <Tab.Screen name="Follow Requests" component={FollowRequestScreen} />
+      <Tab.Screen name="Marked for you" component={MarkedForYouScreen} />
     </Tab.Navigator>
   );
 }

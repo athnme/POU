@@ -36,7 +36,8 @@ export function UserImgL({ userImg }) {
   );
 }
 
-export function YourImgS({ color }) {
+export function UserImgS({ color }) {
+
   return (
     <ProfileImgs style={{ borderColor: color }}>
       <ImgBg source={require("../assets/profileplaceholder.jpg")}>
@@ -46,11 +47,22 @@ export function YourImgS({ color }) {
   );
 }
 
-export function YourImgL({ color }) {
+export function YourImgS({ color, imgSrc }) {
+  return (
+    <ProfileImgs style={{ borderColor: color }}>
+      <ImgBg source={require("../assets/profileplaceholder.jpg")}>
+        <Img source={imgSrc} />
+      </ImgBg>
+    </ProfileImgs>
+  );
+}
+
+export function YourImgL({ color, imgSrc }) {
   return (
     <ProfileImgL style={{ borderColor: color }}>
       <ImgBg source={require("../assets/profileplaceholder.jpg")}>
-        <Img />
+        <Img source={imgSrc} />
+
       </ImgBg>
     </ProfileImgL>
   );
