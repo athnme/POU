@@ -13,6 +13,7 @@ const PointContainer = styled.TouchableOpacity`
 
 const Img = styled.ImageBackground`
   height: 180px;
+
   justify-content: flex-end;
 `;
 
@@ -23,6 +24,7 @@ export default function LocationCard({ locationImg, locationName }) {
         <LinearGradient
           style={styles.textContainer}
           colors={["rgba(0, 0, 0, .0)", "rgba(3, 13, 18, .750)"]}
+
         >
           <HeaderThree>{locationName}</HeaderThree>
         </LinearGradient>

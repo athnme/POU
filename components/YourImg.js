@@ -37,6 +37,7 @@ export function UserImgL({ userImg }) {
 }
 
 export function UserImgS({ color }) {
+
   return (
     <ProfileImgs style={{ borderColor: color }}>
       <ImgBg source={require("../assets/profileplaceholder.jpg")}>
@@ -61,6 +62,7 @@ export function YourImgL({ color, imgSrc }) {
     <ProfileImgL style={{ borderColor: color }}>
       <ImgBg source={require("../assets/profileplaceholder.jpg")}>
         <Img source={imgSrc} />
+
       </ImgBg>
     </ProfileImgL>
   );

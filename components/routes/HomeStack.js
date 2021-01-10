@@ -14,6 +14,7 @@ import { HeaderOne } from "../styles/Typography";
 
 import ImagePickerExample from "../Hardware/PhoneCam";
 
+
 const Btn = styled.TouchableOpacity`
   margin-right: 16px;
 `;
@@ -60,6 +61,7 @@ export default function HomeStack() {
               setModalVisible(false);
             }}
           />
+
         </LinearGradient>
       </Modal>
       <Stack.Navigator

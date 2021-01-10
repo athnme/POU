@@ -88,6 +88,7 @@ export default function YourProfileInfoCard({
           </Stats>
           <Stats>
             <HeaderThree>12</HeaderThree>
+
             <HeaderSix>follows</HeaderSix>
           </Stats>
         </StatsContainer>

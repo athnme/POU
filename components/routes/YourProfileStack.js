@@ -56,6 +56,7 @@ export default function YourProfileStack() {
               setModalVisible(false);
             }}
           />
+
         </LinearGradient>
       </Modal>
       <Stack.Navigator
