@@ -12,7 +12,6 @@ export default function SearchTopNav({ navigation }) {
   return (
     <Tab.Navigator
       initialRouteName="Points"
-
       tabBarOptions={{
         activeTintColor: "#33D17C",
         inactiveTintColor: "#cecece",

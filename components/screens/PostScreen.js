@@ -224,7 +224,6 @@ export default function PostScreen({ route, navigation }) {
           </BtnCta>
         </RouteContainer>
       </ScrollView>
-
     </LinearGradient>
   );
 }

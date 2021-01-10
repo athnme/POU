@@ -8,7 +8,6 @@ import YourProfileInfoCard from "../cards/YourProfileInfoCard";
 const getUser = async () => {
   let uri = `https://pou-server.loca.lt/users/0?_embed=posts`;
 
-
   const response = await fetch(uri);
   const user = await response.json();
   return user;

@@ -98,7 +98,6 @@ const RouteContainer = styled.View`
   padding: 16px 32px 32px;
   flex-direction: row;
   justify-content: flex-end;
-
   align-items: center;
   position: absolute;
   bottom: 0;
@@ -219,7 +218,6 @@ export default function YourPostScreen({ route, navigation }) {
           </BtnCta>
         </RouteContainer>
       </ScrollView>
-
     </LinearGradient>
   );
 }

@@ -4,13 +4,11 @@ import * as ImagePicker from "expo-image-picker";
 import * as Permissions from "expo-permissions";
 
 import { StyleSheet, ImageBackground, Platform } from "react-native";
-
 import { LinearGradient } from "expo-linear-gradient";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 
 import { BtnTextCta, BtnTextDefault } from "../styles/Typography";
 import { YourImgS, YourImgL } from "../YourImg";
-
 import MapStyle from "../styles/MapStyle";
 import useUserLocation from "../UserLocation";
 
@@ -157,7 +155,6 @@ export default function AddScreen({ modaling }) {
       .then(data);
   };
 
-
   return (
     <LinearGradient colors={["#07211F", "#030D12"]} style={styles.container}>
       <PointCreator>
@@ -166,7 +163,6 @@ export default function AddScreen({ modaling }) {
             <ImgContainer source={{ uri: image }} />
             <ImgMenu>
               <BtnDefault onPress={pickImage}>
-
                 <BtnTextDefault>add image</BtnTextDefault>
               </BtnDefault>
             </ImgMenu>
@@ -181,7 +177,6 @@ export default function AddScreen({ modaling }) {
                     "https://images.unsplash.com/photo-1570158268183-d296b2892211?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzB8fHBvcnRyYWl0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
                 }}
               />
-
             </ImgBg>
           </ProfileImgL>
           <Caption
@@ -193,7 +188,6 @@ export default function AddScreen({ modaling }) {
             placeholderTextColor={"rgba(206, 206, 206, .4)"}
             value={caption}
             onchangeText={(text) => setCaption(text)}
-
           />
         </PicCaption>
 
@@ -204,7 +198,6 @@ export default function AddScreen({ modaling }) {
           placeholderTextColor={"rgba(206, 206, 206, .4)"}
           value={locationName}
           onchangeText={(text) => setLocationName(text)}
-
         />
         <TxtInput
           maxLength={60}
@@ -222,7 +215,6 @@ export default function AddScreen({ modaling }) {
               longitude: 6.99791897679244,
               /* latitude: location.coords.latitude,
               longitude: location.coords.longitude, */
-
               latitudeDelta: 0.005,
               longitudeDelta: 0.005,
             }}
@@ -242,7 +234,6 @@ export default function AddScreen({ modaling }) {
                     "https://images.unsplash.com/photo-1570158268183-d296b2892211?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzB8fHBvcnRyYWl0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
                 }}
               />
-
             </Marker>
           </MapView>
         </Map>
@@ -251,7 +242,6 @@ export default function AddScreen({ modaling }) {
             <BtnTextDefault>clear</BtnTextDefault>
           </BtnDefault>
           <BtnCta onPress={modaling} style={{ flex: 1, marginLeft: 8 }}>
-
             <BtnTextCta>post</BtnTextCta>
           </BtnCta>
         </BtnContainer>

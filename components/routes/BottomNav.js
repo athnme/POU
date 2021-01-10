@@ -70,7 +70,6 @@ export default function BottomNav() {
                 }}
               />
             ),
-
           }}
           name="You"
           component={YourProfileStack}
